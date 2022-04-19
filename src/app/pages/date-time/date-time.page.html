@@ -1,0 +1,53 @@
+<app-header titulo="Date Time"></app-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Datos de nacimiento</ion-label>
+      <!-- <ion-button>See All</ion-button> -->
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Fecha de nacimiento</ion-label>
+      <ion-datetime [value]="fechaNaci.toISOString()" display-format="YYYY MMMM DD" (ionChange) = "cambioFecha($event)">
+
+      </ion-datetime>
+    </ion-item>
+
+
+
+    <ion-list-header>
+      <ion-label>Restricciones</ion-label>
+      <!-- <ion-button>See All</ion-button> -->
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Min y Max</ion-label>
+      <ion-datetime display-format="YYYY MMMM DD" min="2015-01-01" max="2035-12-31">
+      </ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Años</ion-label>
+      <ion-datetime display-format="YYYY" min="2015" max="2035">
+      </ion-datetime>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Custom options</ion-label>
+      <ion-datetime [yearValues]="customYearValues">
+        <ion-buttons slot="buttons">
+          <ion-button (click)="hola()">
+            <ion-icon name="hand-right-outline"></ion-icon>
+            Hola
+          </ion-button>
+          <ion-button (click)="mundo()">
+            <ion-icon name="globe-outline"></ion-icon>
+            Mundo
+          </ion-button>
+        </ion-buttons>
+      </ion-datetime>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
