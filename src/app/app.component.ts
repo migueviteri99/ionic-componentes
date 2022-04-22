@@ -19,6 +19,7 @@ export class AppComponent {
     private dataService: DataService) { }
 
   ngOnInit() {
+    this.componentes = this.dataService.getOpcionesMenu();
   }
   
   initializeApp() {
